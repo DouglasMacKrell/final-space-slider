@@ -28,7 +28,7 @@ export type Character = {
 const App: React.FC = () => {
   const [data, setData] = useState<Character[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [activeCharacter, setActiveCharacter] = useState<Character>();
+  const [activeCharacter, setActiveCharacter] = useState<Character>({} as Character);
 
   const handleDialogOpen = (character: Character) => {
     setIsDialogOpen(true)
@@ -52,7 +52,7 @@ const App: React.FC = () => {
   return (
     <>
       <Dialog onClose={() => setIsDialogOpen(false)} open={isDialogOpen} >
-        <div>Content</div>
+        <CharacterCard character={activeCharacter} />
       </Dialog>
 
       <Slider {...SliderProps} >
