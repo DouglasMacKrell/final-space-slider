@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 // Components
 import Slider from './components/Slider';
+import CharacterCard from './components/CharacterCard'
 
 const SliderProps = {
   zoomFactor: 30, // How much the image should zoom on hover in percent
@@ -11,7 +12,7 @@ const SliderProps = {
 };
 
 // Types
-type Character = {
+export type Character = {
   abilities: string[];
   alias: string[];
   gender: string;
